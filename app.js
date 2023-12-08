@@ -8,10 +8,20 @@ const invokeAction = async ({ action, id, ...data }) => {
     case "getMovie":
       const movie = await moviesServices.getMovieById(id);
       return console.log(movie);
-      case "add":
+    case "add":
       const newMovie = await moviesServices.addMovie(data);
       return console.log(newMovie);
+    case "update":
+      const updatedMovie = await moviesServices.updateMovie(id, data);
+      return console.log(updatedMovie);
+    case "delete":
+      const deletedMovie = await moviesServices.deleteMovieById(id);
+      return console.log(deletedMovie);
   }
 };
 
-invokeAction({ action: "list", director: 'yura', title: 'my title' });
+invokeAction({
+  action: "list",
+  id: "zCd_RioNMOBaQwAXnc8Px",
+  director: "yura",
+});
