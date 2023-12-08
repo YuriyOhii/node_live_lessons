@@ -19,4 +19,3 @@
 // getText(filePath);
 // addText(filePath, '\n Hello!');
 // writeText();
-
