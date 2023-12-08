@@ -1,7 +1,5 @@
+import { program } from "commander";
 import * as moviesServices from "./movies/index.js";
-import yargs from "yargs";
-
-
 
 const invokeAction = async ({ action, id, ...data }) => {
   switch (action) {
@@ -23,8 +21,12 @@ const invokeAction = async ({ action, id, ...data }) => {
   }
 };
 
-const {argv} = yargs(process.argv.slice(2));
-console.log(argv);
-invokeAction(argv);
+program
+  .option("-a, --action <type>")
+  .option("-i, --id <type>")
+  .option("-d, --director <type>")
+  .option("-t, --title <type>");
 
-
+program.parse();
+const options = program.opts();
+invokeAction(options);
