@@ -3,7 +3,7 @@ import fs from "fs/promises";
 import path from "path";
 import { nanoid } from "nanoid";
 
-const moviesPath = path.join("movies", "movies.json");
+const moviesPath = path.resolve("movies", "movies.json");
 
 const reWriteMovies = async (data) => {
   await fs.writeFile(moviesPath, JSON.stringify(data, null, 2));

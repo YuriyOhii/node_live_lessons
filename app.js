@@ -1,4 +1,7 @@
 import * as moviesServices from "./movies/index.js";
+import yargs from "yargs";
+
+
 
 const invokeAction = async ({ action, id, ...data }) => {
   switch (action) {
@@ -20,8 +23,8 @@ const invokeAction = async ({ action, id, ...data }) => {
   }
 };
 
-invokeAction({
-  action: "list",
-  id: "zCd_RioNMOBaQwAXnc8Px",
-  director: "yura",
-});
+const {argv} = yargs(process.argv.slice(2));
+console.log(argv);
+invokeAction(argv);
+
+

@@ -17,6 +17,7 @@
   },
   "dependencies": {
     "detect-file-encoding-and-language": "^2.4.0",
-    "nanoid": "^5.0.4"
+    "nanoid": "^5.0.4",
+    "yargs": "^17.7.2"
   }
 }
